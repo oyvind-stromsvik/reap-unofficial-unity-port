@@ -24,6 +24,8 @@ public class TimeController : MonoBehaviour {
     GameController gameController;
     ItemController items;
 
+    Material maskMaterialInstance;
+
     void Awake() {
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
         items = GameObject.Find("ItemController").GetComponent<ItemController>();
@@ -32,6 +34,8 @@ public class TimeController : MonoBehaviour {
     void Start () {
         time = 0;
         time_speed = 1f / 45;
+
+        maskMaterialInstance = Instantiate(mask.material);
     }
 
 	void Update () {
@@ -77,8 +81,9 @@ public class TimeController : MonoBehaviour {
         // Map the radius value which goes between 120 to 360 to 0.33 to 1
         // and pass it to the mask shader.
         float maskFloat = view_radius / 360;
-        mask.material.SetFloat("_Radius", maskFloat);
-        mask.material.renderQueue = mask.defaultMaterial.renderQueue;
+        maskMaterialInstance.SetFloat("_Radius", maskFloat);
+        maskMaterialInstance.renderQueue = mask.defaultMaterial.renderQueue;
+        mask.material = maskMaterialInstance;
 
         DrawCircle();
 
