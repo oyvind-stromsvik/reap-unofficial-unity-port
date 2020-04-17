@@ -70,7 +70,7 @@ public class TimeController : MonoBehaviour {
             }
         }
 
-        // In GameMaker the sin function takes an angle in degrees 
+        // In GameMaker the sin function takes an angle in degrees
         // while in Unity it expects an angle in radians.
         view_radius = 240 + 120 * Mathf.Sin(time * Mathf.Deg2Rad);
 
@@ -95,7 +95,7 @@ public class TimeController : MonoBehaviour {
         else {
             tempColor.a = 0.35f + 0.35f * Mathf.Sin(time * 2 * Mathf.Deg2Rad);
         }
-        
+
         if (player.dying) {
             if (dying_fadeout > 0 || time >= 135) {
                 dying_fadeout++;
@@ -119,30 +119,30 @@ public class TimeController : MonoBehaviour {
         var _y = 0;
 
         dot1.position = new Vector3(
-            Camera.main.transform.position.x + Mathf.Round(_x + _r + 0.5f), 
-            Camera.main.transform.position.y + Mathf.Round(_y), 
+            Camera.main.transform.position.x + Mathf.Round(_x + _r + 0.5f),
+            Camera.main.transform.position.y + Mathf.Round(_y),
             0
         );
         dot2.position = new Vector3(
-            Camera.main.transform.position.x + Mathf.Round(_x - _r + 0.5f), 
-            Camera.main.transform.position.y + Mathf.Round(_y), 
+            Camera.main.transform.position.x + Mathf.Round(_x - _r + 0.5f),
+            Camera.main.transform.position.y + Mathf.Round(_y),
             0
         );
         dot3.position = new Vector3(
-            Camera.main.transform.position.x + Mathf.Round(_x), 
-            Camera.main.transform.position.y + Mathf.Round(_y - _r + 0.5f), 
+            Camera.main.transform.position.x + Mathf.Round(_x),
+            Camera.main.transform.position.y + Mathf.Round(_y - _r + 0.5f),
             0
         );
         dot4.position = new Vector3(
-            Camera.main.transform.position.x + Mathf.Round(_x), 
-            Camera.main.transform.position.y + Mathf.Round(_y + _r + 0.5f), 
+            Camera.main.transform.position.x + Mathf.Round(_x),
+            Camera.main.transform.position.y + Mathf.Round(_y + _r + 0.5f),
             0
         );
 
         // In GameMaker the sin and cos function takes an angle in degrees while in Unity they expect an angle in radians.
         sun.position = new Vector3(
             Camera.main.transform.position.x + Mathf.Round(_x + _r * Mathf.Cos(_a * Mathf.Deg2Rad)),
-            Camera.main.transform.position.y + Mathf.Round(_y - _r * Mathf.Sin(_a * Mathf.Deg2Rad)), 
+            Camera.main.transform.position.y + Mathf.Round(_y - _r * Mathf.Sin(_a * Mathf.Deg2Rad)),
             0
         );
     }
