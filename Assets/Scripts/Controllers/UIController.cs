@@ -6,7 +6,6 @@ public class UIController : MonoBehaviour {
     public Transform energyPin;
     public Transform foodIndicator;
     public Transform foodPin;
-    public Material mat;
     public Transform tips_left_side;
     public Transform tips_right_side;
 
