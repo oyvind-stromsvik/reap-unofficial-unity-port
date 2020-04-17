@@ -114,7 +114,7 @@ public class TimeController : MonoBehaviour {
             }
         }
 
-        //overlay.color = tempColor;
+        overlay.color = tempColor;
     }
 
     void DrawCircle() {
